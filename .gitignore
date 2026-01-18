@@ -1,0 +1,6 @@
+# Local model artifacts
+/models/
+/data/models/
+
+# Survey datasets
+/data/survey_data/

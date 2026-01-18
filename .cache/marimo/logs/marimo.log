@@ -1,0 +1,46 @@
+[2026-01-14 12:10:45] WARNING  marimo:436 - Encountered error when searching for config: [Errno 13] Permission denied: '/app/.config'
+[2026-01-14 12:10:45] WARNING  marimo:57 - Failed to check for updates
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.13/pathlib/_local.py", line 722, in mkdir
+        os.mkdir(self, mode)
+        ~~~~~~~~^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/app/.local/state/marimo'
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.13/pathlib/_local.py", line 722, in mkdir
+        os.mkdir(self, mode)
+        ~~~~~~~~^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/app/.local/state'
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/app/.venv/lib/python3.13/site-packages/marimo/_cli/upgrade.py", line 55, in check_for_updates
+        _check_for_updates_internal(on_update)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/app/.venv/lib/python3.13/site-packages/marimo/_cli/upgrade.py", line 85, in _check_for_updates_internal
+        write_cli_state(state)
+        ~~~~~~~~~~~~~~~^^^^^^^
+      File "/app/.venv/lib/python3.13/site-packages/marimo/_config/cli_state.py", line 30, in write_cli_state
+        config_reader.write_toml(state)
+        ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+      File "/app/.venv/lib/python3.13/site-packages/marimo/_utils/config/config.py", line 45, in write_toml
+        self.filepath.parent.mkdir(parents=True, exist_ok=True)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.13/pathlib/_local.py", line 726, in mkdir
+        self.parent.mkdir(parents=True, exist_ok=True)
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.13/pathlib/_local.py", line 726, in mkdir
+        self.parent.mkdir(parents=True, exist_ok=True)
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/local/lib/python3.13/pathlib/_local.py", line 722, in mkdir
+        os.mkdir(self, mode)
+        ~~~~~~~~^^^^^^^^^^^^
+    PermissionError: [Errno 13] Permission denied: '/app/.local'
+[2026-01-14 12:10:45] WARNING  marimo:436 - Encountered error when searching for config: [Errno 13] Permission denied: '/app/.config'
+[2026-01-14 12:10:45] WARNING  marimo:436 - Encountered error when searching for config: [Errno 13] Permission denied: '/app/.config'
+[2026-01-14 12:10:45] WARNING  marimo:436 - Encountered error when searching for config: [Errno 13] Permission denied: '/app/.config'
+[2026-01-14 12:10:45] WARNING  marimo:436 - Encountered error when searching for config: [Errno 13] Permission denied: '/app/.config'
+[2026-01-14 12:10:45] INFO     marimo:338 - ToolManager initialized
