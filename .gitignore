@@ -4,3 +4,9 @@
 
 # Survey datasets
 /data/survey_data/
+
+# Python cache and local logs
+__pycache__/
+*.pyc
+/.cache/
+src/__marimo__/session/
