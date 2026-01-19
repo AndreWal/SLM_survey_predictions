@@ -1,22 +1,27 @@
-# LLM Survey Predictions
+# 🗳️ LLM Survey Predictions
 
 Simulate Swiss voting behavior with small LLMs and compare predictions against
 real survey responses.
 
-## What this repo does
+## 🔎 At a glance
+- 📦 Local, reproducible runs with Docker + GGUF models.
+- 🧪 Per-vote evaluation against real survey ground truth.
+- 📈 Ready-to-share figures and CSV metrics.
+
+## ✨ What this repo does
 - Prepares cleaned survey data with respondent profiles and issue-specific vote
   summaries.
 - Prompts local LLMs to predict binary votes (yes/no) for each respondent.
 - Stores model outputs alongside ground truth for analysis and visualization.
 
-## Repository layout
+## 🧭 Repository layout
 - `src/`: model download, prompting, and evaluation notebooks/scripts.
 - `data/`: processed datasets, results, and summaries (raw survey data excluded).
 - `models/`: local GGUF model files (ignored by git).
 - `docker/`: container setup for reproducible runs.
 - `start.sh`: convenience script to run the Docker image.
 
-## Prompt blueprint
+## 🧩 Prompt blueprint
 Each example combines (1) the vote summary, (2) party recommendations, and
 (3) a respondent profile. The model must answer with exactly `yes` or `no`.
 
@@ -36,17 +41,16 @@ per month. You are <political interest> in politics and you identify with
 How would you vote? Answer exactly: yes or no.
 ```
 
-## Results snapshot (current)
+## 📊 Results snapshot (current)
 The `data/results` folder contains datasets with the ground-truth vote in the
 `vote` column and model predictions in columns named after each model
 (e.g., `LFM`). LFM and Llama-3.2 results are available.
 
-## Insights
-- SLM are still very sensitive to prompt design.
-- LFM performs slightly better than the baseline, but analysis by vote shows
-  this is driven by a single vote. 
-- Llama shows strong performance for one vote as well but does not consistently outperform the baseline across multiple votes.
-- Fine-tuning might lead to better performance but SLMs still have a long way to go before they can reliably simulate human voting behavior.
+## 🔍 Insights
+- 🧠 SLMs are still very sensitive to prompt design.
+- 📌 LFM performs slightly better than the baseline, but analysis by vote shows this is driven by a single vote.
+- ⚖️ Llama shows strong performance for one vote as well but does not consistently outperform the baseline across multiple votes.
+- 🧰 Fine-tuning might help, but SLMs still have a long way to go before they can reliably simulate human voting behavior.
 
 **Model status**
 
@@ -56,10 +60,10 @@ The `data/results` folder contains datasets with the ground-truth vote in the
 | Llama-3.2-3B-Instruct | llama32 | complete |
 | Qwen3-4B-Instruct-2507 | qwen3 | pending |
 
-## Figures
+## 📈 Figures
 ![Vote distribution](data/figures_tables/vote_distribution.png)
 
-## Metrics (overall)
+## 🧮 Metrics (overall)
 Computed on `data/results/lfmdat.parquet` (n = 3,883). Majority is a baseline
 that always predicts the most common class.
 
@@ -72,7 +76,7 @@ that always predicts the most common class.
 Metrics are saved to `data/figures_tables/metrics_overall.csv` and the
 per-metric export to `data/figures_tables/model_metrics.csv`.
 
-## Metrics by vote_type
+## 🧾 Metrics by vote_type
 Computed on `data/results/lfmdat.parquet` and saved to
 `data/figures_tables/metrics_by_vote_type.csv`. Ground-truth balance is
 included to indicate when accuracy may be less informative.
@@ -89,7 +93,7 @@ included to indicate when accuracy may be less informative.
 | Llama-3.2 | 679 E-ID | 1,189 | 676 | 513 | 0.569 | 0.464 | 0.147 | 0.525 |
 | Majority | 679 E-ID | 1,189 | 676 | 513 | 0.569 | **0.569** | 0.725 | 0.500 |
 
-## Quickstart
+## ⚡ Quickstart
 1. Download models (uses Hugging Face Hub):
    `python3 src/download_models.py`
 2. Run model inference:
@@ -98,7 +102,7 @@ included to indicate when accuracy may be less informative.
 4. Generate figures and metrics tables:
    `python3 src/analysis_results.py`
 
-## Notes
+## 📝 Notes
 - Results files are named `<abbrev>dat.parquet` and include all original
   respondent features plus model predictions in a new column.
 - Use `SKIP_MODELS=llama32,qwen3` to skip specific models.
