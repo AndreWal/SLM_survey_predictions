@@ -11,6 +11,12 @@ Llama-3.2,recall,0.3406022845275182
 Llama-3.2,f1,0.4536652835408022
 Llama-3.2,specificity,0.8415942769545223
 Llama-3.2,balanced_accuracy,0.5910982807410202
+Qwen3,accuracy,0.6090651558073654
+Qwen3,precision,0.6361815754339119
+Qwen3,recall,0.4948078920041537
+Qwen3,f1,0.5566588785046729
+Qwen3,specificity,0.7215125191619827
+Qwen3,balanced_accuracy,0.6081602055830682
 Majority,accuracy,0.5039917589492661
 Majority,precision,NaN
 Majority,recall,0.0

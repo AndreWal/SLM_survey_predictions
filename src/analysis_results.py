@@ -34,17 +34,21 @@ def _(Path):
     results_dir = Path("data/results")
     results_path = results_dir / "lfmdat.parquet"
     llama_path = results_dir / "llama32dat.parquet"
+    qwen_path = results_dir / "qwen3dat.parquet"
     output_dir = Path("data/figures_tables")
     output_dir.mkdir(parents=True, exist_ok=True)
-    return llama_path, output_dir, results_path
+    return llama_path, output_dir, qwen_path, results_path
 
 
 @app.cell
-def _(llama_path, pl, results_path):
+def _(llama_path, pl, qwen_path, results_path):
     df = pl.read_parquet(results_path)
     if llama_path.exists():
         llama_df = pl.read_parquet(llama_path).select(["LLAMA32"])
         df = df.with_columns(llama_df["LLAMA32"])
+    if qwen_path.exists():
+        qwen_df = pl.read_parquet(qwen_path).select(["QWEN3"])
+        df = df.with_columns(qwen_df["QWEN3"])
     return (df,)
 
 
@@ -97,6 +101,7 @@ def _(df, pl):
     model_specs = [
         {"column": "LFM", "label": "LFM"},
         {"column": "LLAMA32", "label": "Llama-3.2"},
+        {"column": "QWEN3", "label": "Qwen3"},
     ]
     model_specs = [
         spec for spec in model_specs if spec["column"] in mapped.columns
