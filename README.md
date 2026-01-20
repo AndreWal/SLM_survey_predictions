@@ -1,11 +1,10 @@
 # 🗳️ LLM Survey Predictions
 
-This project examines whether small, locally runnable language models can
+This project examines whether small language models (SLMs) can
 simulate human decisions such as political behavior where prior research
 has largely depended on closed, proprietary LLMs and has delivered mixed
 results, especially for populations outside the United States. That reliance on commericial LLMs
-raises concerns about privacy, reproducibility, and access. Small language
-models (SLMs) can mitigate these issues because they run locally, but their
+raises concerns about privacy, reproducibility, and access. SLMs can mitigate these issues because they run locally, but their
 performance remains uncertain. To address this gap, the repo evaluates several
 SLMs by predicting Swiss voters' choices in three direct democratic votes in 2025 using vote
 proposal summaries, party recommendations, and commonly used voter attributes
