@@ -8,7 +8,7 @@ raises concerns about privacy, reproducibility, and access. SLMs can mitigate th
 performance remains uncertain. To address this gap, the repo evaluates several
 SLMs by predicting Swiss voters' choices in three direct democratic votes in 2025 using vote
 proposal summaries, party recommendations, and commonly used voter attributes
-for explaining vote behavior.
+for explaining vote behavior with data from swissvotes.ch.
 
 ## 🔎 At a glance
 - 📦 Local, reproducible runs with Docker + GGUF models.
