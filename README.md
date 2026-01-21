@@ -87,7 +87,7 @@ always predicts the most common class.
 Metrics are saved to `data/figures_tables/metrics_overall.csv` and the
 per-metric export to `data/figures_tables/model_metrics.csv`.
 
-## 🧾 Metrics by vote_type
+## 🧾 Metrics by Vote (677-679)
 Computed on the 3,883 examples and saved to
 `data/figures_tables/metrics_by_vote_type.csv`. Majority is a baseline that
 always predicts the most common class.
